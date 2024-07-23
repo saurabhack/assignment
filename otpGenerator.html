@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="generate()">generate</button>
+<script>
+    function generate(){
+        const otp=Math.round((Math.random()*2000)+2000)
+        console.log(otp)
+        localStorage.setItem("mainOtp",otp)
+        window.location.assign('optpConfirmation.html')
+    }
+</script>
+</body>
+
+</html>

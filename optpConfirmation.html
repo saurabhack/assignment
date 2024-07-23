@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="otp">
+    <button onclick="verify()">verify otp</button>
+<script>
+    let counter=0;
+    function verify(){
+        
+        if(counter>=3){
+            let element=document.querySelector("#otp")
+            element.disabled = true;
+        }else{
+            let otp=parseInt(document.querySelector('#otp').value)
+            console.log(otp)
+            let m=parseInt(localStorage.getItem('mainOtp'))
+            if(otp===m){
+                window.location.assign("verifyMessage.html")
+            }else{
+                alert("application failed")
+            }
+            counter++;
+        }
+    }
+</script>
+</body>
+</html>
